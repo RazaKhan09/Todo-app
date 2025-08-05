@@ -6,8 +6,11 @@ const TodoSlice=createSlice({
         todos:[
             {
                 id:1,
-                text:"Hello world"
+                text:"First Task"
             }
+        ],
+        comp:[
+            
         ]
     },
     reducers:{
@@ -22,9 +25,28 @@ const TodoSlice=createSlice({
             state.todos=state.todos.filter((todo)=>{
                 return todo.id!==action.payload
             })
-        }
+        },
+        editTodo:(state,action)=>{
+            for(let i=0;i<state.todos.length;i++){
+                if(state.todos[i].id===action.payload.id){
+                    state.todos[i].text=action.payload.text
+                }
+            }
+        },
+        comptodo:(state,action)=>{
+            const newcomptodo={
+                id:nanoid(),
+                text:action.payload
+            }
+            state.comp.push(newcomptodo)
+        },
+        removecompTodo:(state,action)=>{
+            state.comp=state.comp.filter((elem)=>{
+                return elem.id!==action.payload
+            })
+        },
     }
 })
 
-export const {addTodo,removeTodo} = TodoSlice.actions;
+export const {addTodo,removeTodo,editTodo,comptodo,removecompTodo} = TodoSlice.actions;
 export default TodoSlice.reducer;
