@@ -10,18 +10,11 @@ import Register from './components/Register.jsx'
 const router=createBrowserRouter([
   {
     path:"/",
-    element:<App/>,
-    children:[
-      {
-        path:"",
-        element:<Home/>
-      },
-      {
-        path:"/register",
-        element:<Register/>
-      }
-
-    ]
+    element:<App/>
+  },
+  {
+    path:"/register",
+    element:<Register/>
   }
 ])
 

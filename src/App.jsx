@@ -6,6 +6,7 @@ import Todo from './components/Todo'
 import AddTodo from './components/AddTodo'
 import Header from './components/Header'
 import { Outlet } from 'react-router-dom'
+import Home from './components/Home'
 
 function App() {
   
@@ -13,8 +14,7 @@ function App() {
   return (
     <>
       <Header/>
-      <Outlet/>
-      
+      <Home/>
     </>
   )
 }
