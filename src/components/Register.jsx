@@ -3,7 +3,7 @@ import React from 'react'
 function Register() {
   return (
     <div className='flex justify-center items-center h-svh w-svw'>
-      <form action="/register" method='post'>
+      <form action="https://todo-app-xi-ten-83.vercel.app/register" method='post'>
         <label for="username" >Username: </label>
         <input id="username"type="text" placeholder='Enter username here' name="username"/>
         <br/>
